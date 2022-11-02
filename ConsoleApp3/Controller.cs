@@ -16,28 +16,22 @@ namespace ConsoleApp3
             File.WriteAllText("cats.json", json);
 
         }
+
         public Cat[] Load(string path)
         {
-            path = "cats.json";
-            if (path == null)
-            {
-                return null;
-            }
-            else 
-            {
-                var json = File.ReadAllText(path); 
-                Cat[] cats = JsonSerializer.Deserialize<Cat[]>(json);
-                return cats;
-            }
+            var json = File.ReadAllText(path);
+            
+            Cat[] cats = JsonSerializer.Deserialize<Cat[]>(json);
 
+            return cats;
         }
-        
 
-       
+
+
 
     }
-    
 
-        
-    
+
+
+
 }
